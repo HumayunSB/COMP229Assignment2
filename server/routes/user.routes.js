@@ -1,0 +1,20 @@
+import { Router } from 'express';
+import authCtrl from '../controllers/auth.controller.js';
+import userCtrl from '../controllers/user.controller.js';
+
+const router = Router();
+
+router
+  .route('/api/users')
+  .get(userCtrl.list)
+  .post(userCtrl.create);
+
+router.param('userId', userCtrl.byID);
+
+router
+  .route('/api/users/:userId')
+  .get(authCtrl.requireSignin, userCtrl.read)
+  .put(authCtrl.requireSignin, authCtrl.hasAuthorization, userCtrl.update)
+  .delete(authCtrl.requireSignin, authCtrl.hasAuthorization, userCtrl.remove);
+
+export default router;

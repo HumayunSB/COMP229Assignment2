@@ -1,0 +1,42 @@
+{
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "compression": "^1.8.1",
+    "concurrently": "^9.2.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.8",
+    "express": "^5.2.1",
+    "express-jwt": "^8.5.1",
+    "global": "^4.4.0",
+    "helmet": "^8.2.0",
+    "jsonwebtoken": "^9.0.3",
+    "lodash": "^4.18.1",
+    "mongoose": "^9.11.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.5",
+    "@tailwindcss/vite": "^4.1.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "babel-loader": "^10.1.1",
+    "nodemon": "^1.14.10",
+    "tailwindcss": "^4.1.4",
+    "vite": "^6.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently --names \"Vite Frontend,Express Backend (Nodemon)\" --prefix \"[{name}]\" --prefix-colors \"cyan,green\" \"vite --port 5173 --strictPort\" \"nodemon server.js\"",
+    "build": "vite build",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "name": "myportfolio",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "author": "Blessing",
+  "license": "MIT"
+}
